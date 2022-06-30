@@ -105,6 +105,5 @@
         }
       }
     }
-  },
-  "defaultProject": "03-redux-todo-app"
+  }
 }

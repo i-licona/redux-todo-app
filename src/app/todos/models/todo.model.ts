@@ -1,10 +1,10 @@
 export class Todo{
-  private id:number;
-  private texto:string;
-  private completado:boolean;
+  public id:number;
+  public texto:string;
+  public completado:boolean;
 
   constructor(_texto:string){
-    this.id = new Date().getTime();
+    this.id = Math.random();
     this.texto = _texto;
     this.completado = false;
   }

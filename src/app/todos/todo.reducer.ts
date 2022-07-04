@@ -1,7 +1,7 @@
 import { state } from "@angular/animations";
 import { Action, createReducer, on } from "@ngrx/store";
 import { Todo } from "./models/todo.model";
-import { add, edit, remove, setStatus, toggleAll } from "./todo.actions";
+import { add, cleanComplete, edit, remove, setStatus, toggleAll } from "./todo.actions";
 
 export const initialState:Todo[] = [
   new Todo('Salvar al mundo'),
@@ -45,6 +45,7 @@ const _todoReducer = createReducer(initialState,
       }
     })
   }),
+  on(cleanComplete,(state => state.filter(todo => !todo.completado)))
 );
 
 export const todoReducer = (state:any, action:Action) =>{
